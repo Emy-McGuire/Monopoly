@@ -214,747 +214,745 @@ public class MonopolyBank
 
 			}
 
-		public static void visitingDungeon()
-			{
-				if (players.index == 10)
-					{
-						System.out.println("Haha sucker you have to go pay a visit to the DUNGEON!"
-								+ "\n and 1 of your turns was skipped");
-						System.out.println(playerName + " is now on tile 11.");
+		public static void visitingDungeon() {
+			if (players.index == 10) {
+				System.out.println(
+						"Haha sucker you have to go pay a visit to the DUNGEON!" + "\n and 1 of your turns was skipped");
+				System.out.println(playerName + " is now on tile 11.");
+				
 
+			}
+			playName.get(0).setIndex(11);
+			MonopolyCardsandDice.rollDice();
+		}
+
+		public static void inDungeon() {
+			if (players.index == 30) {
+				System.out.println(" ");
+				System.out.println("You are now in the dungeon, " + playerName);
+				System.out.println("You either have to pay $200 or lose three turns.");
+				System.out.println("What is your choice..." + playerName + "\n 1) Pay $200" + "\n 2) Lose Three Turns");
+
+				dungeonChoice = playerChoose.nextInt();
+
+					if (dungeonChoice == 1) 
+						{
+							System.out.println(playerName + ", you are now out $200. The bank now is $200 richer.");
+							playName.get(0).setMoney(playName.get(0).getMoney() - 200.0);
+
+						} 
+					else if (dungeonChoice == 2) 
+						{
+							System.out.println(
+									"You have lost three turns " + playerName + " You are now back where you started on tile 1");
+						}
+			}
+			
+			playName.get(0).setIndex(31);
+			MonopolyCardsandDice.rollDice();
+		}
+
+		public static void landOnProperty() {
+			if (players.index == 1) {
+				System.out.println("Would you like to buy this property?");
+
+				System.out.println("(1) Yes");
+				System.out.println("(2) No");
+				choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+
+					} 
+				
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(1);
 					}
-				players.setIndex(11);
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 3) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(3);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 6) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+						
+
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(6);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 8) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(8);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+			}
+			
+			if (players.index == 9) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(9);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+			}
+			
+			if (players.index == 11) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(11);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+
+			if (players.index == 13) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(13);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 14) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(14);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 16) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(16);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 18) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(18);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 19) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(19);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 21) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					}
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(21);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 23) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(23);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 24) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(24);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 26) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(26);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 27) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(27);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+			}
+			
+			if (players.index == 29) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(29);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 31) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1)
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(31);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 32) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(32);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+			}
+			
+			if (players.index == 34) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(34);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 37) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(37);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 39) 
+				{
+					System.out.println("Would you like to buy this property?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice = intInput.nextInt();
+
+				if (choice == 1) 
+					{
+						System.out.println("You have chosen to purchase the property");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice == 2) 
+					{
+						System.out.println("You chose not to buy the Property, roll again!");
+						playName.get(0).setIndex(38);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+
+		}
+
+		public static void landOnRailroad() {
+			if (players.index == 5) 
+				{
+					System.out.println("Would you like to buy this railroad?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice2 = intInput.nextInt();
+
+				if (choice2 == 1) 
+					{
+						System.out.println("You have chosen to purchase the railroad");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					} 
+				else if (choice2 == 2) 
+					{
+						System.out.println("You chose not to purchase the Railroad, please roll again!");
+						playName.get(0).setIndex(7);
+					}
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 15) 
+				{
+					System.out.println("Would you like to buy this railroad?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice2 = intInput.nextInt();
+
+				if (choice2 == 1) 
+					{
+						System.out.println("You have chosen to purchase the railroad");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					}
+				else if (choice2 == 2) 
+					{
+						System.out.println("You chose not to purchase the Railroad, please roll again!");
+						playName.get(0).setIndex(15);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			
+			if (players.index == 25) 
+				{
+					System.out.println("Would you like to buy this railroad?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice2 = intInput.nextInt();
+
+				if (choice2 == 1) 
+					{
+						System.out.println("You have chosen to purchase the railroad");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
+						MonopolyCardsandDice.CheckMoneyLevel();
+					}
+				else if (choice2 == 2) 
+					{
+						System.out.println("You chose not to purchase the Railroad, please roll again!");
+						playName.get(0).setIndex(25);
+					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
 				MonopolyCardsandDice.rollDice();
 			}
 
-		public static void inDungeon()
+		}
+
+		public static void landOnUtility() 
 			{
-				if (players.index == 30)
+			if (players.index == 12) 
+				{
+					System.out.println("Would you like to buy this utility?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice3 = intInput.nextInt();
+
+				if (choice3 == 1) 
 					{
-						System.out.println(" ");
-						System.out.println("You are now in the dungeon, " + playerName);
-						System.out.println("You either have to pay $200 or lose three turns.");
-						System.out.println(
-								"What is your choice..." + playerName + "\n 1) Pay $200" + "\n 2) Lose Three Turns");
-
-						dungeonChoice = playerChoose.nextInt();
-
-						if (dungeonChoice == 1)
-							{
-								System.out.println(playerName + ", you are now out $200. The bank now is $200 richer.");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 200.0);
-
-							}
-						else if (dungeonChoice == 2)
-							{
-								System.out.println("You have lost three turns " + playerName
-										+ " You are now back where you started on tile 1");
-
-							}
+						System.out.println("You have chosen to purchase the utility");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
+					} 
+				else if (choice3 == 2) 
+					{
+						System.out.println("You chose not to purchase the Utility, please roll again!");
+						playName.get(0).setIndex(12);
 					}
-				players.setIndex(31);
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
 				MonopolyCardsandDice.rollDice();
+
 			}
+			
+			if (players.index == 28) 
+				{
+					System.out.println("Would you like to buy this utility?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice3 = intInput.nextInt();
 
-		public static void landOnProperty()
-			{
-				if (players.index == 1)
+				if (choice3 == 1) 
 					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						MonopolyBank.playName.get(0)
-								.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 3)
+						System.out.println("You have chosen to purchase the utility");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
+					} 
+				else if (choice3 == 2) 
 					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 3 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
+						System.out.println("You chose not to purchase the Utility, please roll again!");
+						playName.get(0).setIndex(28);
 					}
-				if (players.index == 6)
+				
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
+
+			}
+			if (players.index == 35) 
+				{
+					System.out.println("Would you like to buy this utility?");
+		
+					System.out.println("(1) Yes");
+					System.out.println("(2) No");
+					choice3 = intInput.nextInt();
+
+				if (choice3 == 1) 
 					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 6 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 8)
+						System.out.println("You have chosen to purchase the utility");
+						playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
+					} 
+				else if (choice3 == 2) 
 					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 8 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
+						System.out.println("You chose not to purchase the Utility, please roll again!");
+						playName.get(0).setIndex(35);
 					}
-				if (players.index == 9)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = players.index = 9 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 11)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-								MonopolyCardsandDice.rollDice();
-
-							}
-						// players.index = 11 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-
-				if (players.index == 13)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 13 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 14)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 14 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 16)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 16 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 18)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 18 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 19)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 19 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 21)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 21 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 23)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 23 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 24)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 24 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 26)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 26 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 27)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 27 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 29)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 29 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 31)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 31 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 32)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 32 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 34)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 34 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 37)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 37 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 39)
-					{
-						System.out.println("Would you like to buy this property?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice = intInput.nextInt();
-
-						if (choice == 1)
-							{
-								System.out.println("You have chosen to purchase the property");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 100.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice == 2)
-							{
-								System.out.println("You chose not to buy the Property, roll again!");
-
-							}
-						// players.index = 39 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
+				playName.get(0).setIndex(playName.get(0).getIndex() + MonopolyCardsandDice.diceSum);
+				MonopolyCardsandDice.rollDice();
 
 			}
 
-		public static void landOnRailroad()
+		}
+
+		public static void incomeTax() 
 			{
-				if (players.index == 5)
-					{
-						System.out.println("Would you like to buy this railroad?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice2 = intInput.nextInt();
-
-						if (choice2 == 1)
-							{
-								System.out.println("You have chosen to purchase the railroad");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice2 == 2)
-							{
-								System.out.println("You chose not to purchase the Railroad, please roll again!");
-
-							}
-						players.index = 5 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 15)
-					{
-						System.out.println("Would you like to buy this railroad?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice2 = intInput.nextInt();
-
-						if (choice2 == 1)
-							{
-								System.out.println("You have chosen to purchase the railroad");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice2 == 2)
-							{
-								System.out.println("You chose not to purchase the Railroad, please roll again!");
-								players.index = 15 + MonopolyCardsandDice.diceSum;
-
-							}
-						players.index = 15 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 25)
-					{
-						System.out.println("Would you like to buy this railroad?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice2 = intInput.nextInt();
-
-						if (choice2 == 1)
-							{
-								System.out.println("You have chosen to purchase the railroad");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 250.0);
-								MonopolyCardsandDice.CheckMoneyLevel();
-
-							}
-						else if (choice2 == 2)
-							{
-								System.out.println("You chose not to purchase the Railroad, please roll again!");
-
-							}
-						players.index = 25 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-
-			}
-
-		public static void landOnUtility()
-			{
-				if (players.index == 12)
-					{
-						System.out.println("Would you like to buy this utility?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice3 = intInput.nextInt();
-
-						if (choice3 == 1)
-							{
-								System.out.println("You have chosen to purchase the utility");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
-
-							}
-						else if (choice3 == 2)
-							{
-								System.out.println("You chose not to purchase the Utility, please roll again!");
-
-							}
-						players.index = 12 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 28)
-					{
-						System.out.println("Would you like to buy this utility?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice3 = intInput.nextInt();
-
-						if (choice3 == 1)
-							{
-								System.out.println("You have chosen to purchase the utility");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
-
-							}
-						else if (choice3 == 2)
-							{
-								System.out.println("You chose not to purchase the Utility, please roll again!");
-
-							}
-						players.index = 28 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-				if (players.index == 35)
-					{
-						System.out.println("Would you like to buy this utility?");
-
-						System.out.println("(1) Yes");
-						System.out.println("(2) No");
-						choice3 = intInput.nextInt();
-
-						if (choice3 == 1)
-							{
-								System.out.println("You have chosen to purchase the utility");
-								playName.get(0).setMoney(playName.get(0).getMoney() - 300.0);
-
-							}
-						else if (choice3 == 2)
-							{
-								System.out.println("You chose not to purchase the Utility, please roll again!");
-
-							}
-						players.index = 35 + MonopolyCardsandDice.diceSum;
-						MonopolyCardsandDice.rollDice();
-
-					}
-
-			}
-
-		public static void testParking()
-			{
-				players.index = 15;
-
-				MonopolyCardsandDice.diceSum = 5;
-
-			}
-
-		public static void incomeTax()
-			{
-
+				//why cant this merge
 			}
 
 	}
+
