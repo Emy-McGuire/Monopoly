@@ -28,7 +28,7 @@
 
 	System.out.println("Please pick a Board that you want to play");
 
-	System.out.println("please press 1 for Origional or 2 for Disney theme");
+	System.out.println("please press 1 for Original or 2 for Disney theme");
 
 	Scanner userInput = new Scanner (System.in);
 

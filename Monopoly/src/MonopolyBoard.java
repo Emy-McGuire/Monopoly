@@ -1,19 +1,17 @@
 
-
-
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 
 import java.util.Scanner;
 
 //MonopolyBoard class is now our property stuff, railroad stuff, and utility stuff
 
-public class MonopolyBoard {
+public class MonopolyBoard {*/
 	
 
 	
-/*
 
-				board[0] = new Go("GO");
+
+				/*board[0] = new Go("GO");
 				board[1] = new Property("AURORA'S COTTAGE", "PURPLE", 60);
 				board[2] = new CommunityChest("COMMUNITY CHEST");
 				board[3] = new Property("SLEEPING BEAUTY'S CASTLE", "PURPLE", 60);
@@ -52,9 +50,9 @@ public class MonopolyBoard {
 				board[36] = new CommunityChest("COMMUNITY CHEST");
 				board[37] = new Property("CITY OF THEBES", "DARK BLUE", 350);
 				board[38] = new Tax("LUXURY TAX");
-				board[39] = new Property("MOUNT OLYMPUS", "DARK BLUE", 400);
+				board[39] = new Property("MOUNT OLYMPUS", "DARK BLUE", 400);*/
 
-				if (players.index == 20)
+			/*if (players.index == 20)
 					{
 						movingForward = false;
 
@@ -75,11 +73,8 @@ public class MonopolyBoard {
 							{
 								players.index -= MonopolyCardsandDice.diceSum;
 							}
-					}/*
+					}*/
 //yaaaay this should work now hopefully
 			
 
-	}
-
-}
-}
+	//}
