@@ -925,7 +925,7 @@ public class MonopolyBank {
 
 	public static void incomeTax() 
 		{
-
+			//why cant this merge
 		}
 
 }
