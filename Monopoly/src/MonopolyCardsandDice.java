@@ -12,161 +12,91 @@ public class MonopolyCardsandDice
 		
 		static int randomNumber1;
 		static int randomNumber2;
-		static int randomNumber3;
-		static int randomNumber4;
-		static int randomNumber5;
-		static int randomNumber6;
-		static int randomNumber7;
-		static int randomNumber8;
-		static int randomNumber9;
-		static int randomNumber10;
-		
 		
 		static int diceA;
 		static int diceB;
-		static int diceC;
-		static int diceD;
-		static int diceE;
-		static int diceF;
-		static int diceG;
-		static int diceH;
-		static int diceI;
-		static int diceJ;
-		
 		
 		static int diceSum;
-		static int diceSum2;
-		static int diceSum3;
-		static int diceSum4;
-		static int diceSum5;
+		
 		
 		static String roll;
-		static String roll2;
-		static String roll3;
-		static String roll4;
-		static String roll5;
 		
 		static Scanner userInput = new Scanner(System.in);
 
 		
-		public static void rollDice()
-			{
-
-				randomNumber1 = (int) (Math.random() * 6 + 1);
-				randomNumber2 = (int) (Math.random() * 6 + 1);
-				randomNumber3 = (int) (Math.random() * 6 + 1);
-				randomNumber4 = (int) (Math.random() * 6 + 1);
-				randomNumber5 = (int) (Math.random() * 6 + 1);
-				randomNumber6 = (int) (Math.random() * 6 + 1);
-				randomNumber7 = (int) (Math.random() * 6 + 1);
-				randomNumber8 = (int) (Math.random() * 6 + 1);
-				randomNumber9 = (int) (Math.random() * 6 + 1);
-				randomNumber10 = (int) (Math.random() * 6 + 1);
-				
-				
-				diceA = randomNumber1;
-				diceB = randomNumber2;
-				diceSum = diceA + diceB;
-				
-				diceC = randomNumber3;
-				diceD = randomNumber4;
-				diceSum2 = diceC + diceD;
-				
-				diceE = randomNumber5;
-				diceF = randomNumber6;
-				diceSum3= diceE + diceF;
-				
-				diceG = randomNumber7;
-				diceH = randomNumber8;
-				diceSum4 = diceG + diceH;
-				
-				diceI = randomNumber9;
-				diceJ = randomNumber10;
-				diceSum5 = diceI + diceJ;
-				
-				//Pass go isn't working
+public static void rollDice()
+	{
 				
 	while(playing)
 		{
+			randomNumber1 = (int) (Math.random() * 6 + 1);
+			randomNumber2 = (int) (Math.random() * 6 + 1);
+		
+			diceA = randomNumber1;
+			diceB = randomNumber2;
+			diceSum = diceA + diceB;
+		
 			if(players.index >= 0 && players.index <= 38)
 			  {
 				playing = true;
-			//1
+	
 					System.out.println("Click enter to roll");
 					roll = userInput.nextLine();
 					System.out.println("You rolled: " + diceA + " and " + diceB + " for a total of " + diceSum);
-					MonopolyBank.playName.get(0).setIndex(diceSum);
+					MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex() + diceSum);
 					MonopolyPlay.locationPics();
-			//2
-					System.out.println("Click enter to roll again");
-					roll2 = userInput.nextLine();
-					System.out.println("You rolled: " + diceC + " and " + diceD + " for a total of " + diceSum2);
-					MonopolyBank.playName.get(0).setIndex(diceSum + diceSum2);
-					MonopolyPlay.locationPics();
-			//3
-					System.out.println("Click enter to roll again");
-					roll3 = userInput.nextLine();
-					System.out.println("You rolled: " + diceE + " and " + diceF + " for a total of " + diceSum3);
-					MonopolyBank.playName.get(0).setIndex(diceSum + diceSum2 + diceSum3);
-					MonopolyPlay.locationPics();
-			//4
-					System.out.println("Click enter to roll again");
-					roll4 = userInput.nextLine();
-					System.out.println("You rolled: " + diceG + " and " + diceH + " for a total of " + diceSum4);
-					MonopolyBank.playName.get(0).setIndex(diceSum + diceSum2 + diceSum3 + diceSum4);
-					MonopolyPlay.locationPics();
-			//5
-					System.out.println("Click enter to roll again");
-					roll5 = userInput.nextLine();
-					System.out.println("You rolled: " + diceI + " and " + diceJ + " for a total of " + diceSum5);
-					MonopolyBank.playName.get(0).setIndex(diceSum + diceSum2 + diceSum3 + diceSum4 + diceSum5);
-					MonopolyPlay.locationPics();
+					
 				}
 			
 			if(players.index >= 39)
 				{
 					
-					MonopolyCardsandDice.GoTriggerEvent();
+					GoTriggerEvent();
 					
 					
 				}
 		}
 	}
 	
-public static void CheckMoneyLevel()
-	{
-		if(players.money == 5000.0)
-			{
-				System.out.println("YAY! " + MonopolyBank.playName + ". You just won Disney Monopoly!!");
-				playing = false;
-			}
-					
-		else if(players.money == 0.0)
-			{
-				System.out.println("Ooops looks like you are out of money meaning you are..."
-								+ "\n "
-								+ "\n BANKRUPT!!"
-								+ "\n ");
-				playing = false;
-			}
-		else
-			{
-				System.out.println(MonopolyBank.playerName + "'s bank account is currently at: " + players.money);
-				rollDice();
-			}
-	}
-	
-		public static void GoTriggerEvent()
-			{	
-				players.index = players.index - 39;
-				System.out.println("You have passed GO! So you get $200 added to your bank account." );
-				players.money += 200.0;
+				public static void CheckMoneyLevel()
+					{
+						if(players.money == 5000.0)
+							{
+								System.out.println("YAY! " + MonopolyBank.playName + ". You just won Disney Monopoly!!");
+								playing = false;
+							}
+									
+						else if(players.money == 0.0)
+							{
+								System.out.println("Ooops looks like you are out of money meaning you are..."
+												+ "\n "
+												+ "\n BANKRUPT!!"
+												+ "\n ");
+								playing = false;
+							}
 						
-				CheckMoneyLevel();
+						else
+							{
+								System.out.println(MonopolyBank.playerName + "'s bank account is currently at: " + players.money);
+								rollDice();
+							}
+					}
+					
+				public static void GoTriggerEvent()
+					{	
+						System.out.println("You have passed GO! So you get $200 added to your bank account." );
+						MonopolyBank.playName.get(0).setMoney(MonopolyBank.playName.get(0).getMoney() + 200.0);
+						MonopolyBank.playName.get(0).setIndex(1);
+										
+						CheckMoneyLevel();
+								
 				
+					}
 
-			}
-
+		
+		
+		
+/*
 		public static void chanceCardsDeck()
 			{
 				ArrayList<Cards> chance = new ArrayList<Cards>();
@@ -192,6 +122,7 @@ public static void CheckMoneyLevel()
 				comunnityChest.add(new Cards("Community Chest Card", "Advance to Go", false, 0, 0));
 
 			}
-//
-	}
+ */
+		
+}
 
