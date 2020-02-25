@@ -1,6 +1,4 @@
-
 import java.util.Scanner;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,18 +40,20 @@ public class MonopolyCardsandDice {
 			System.out.println("You rolled: " + diceA + " and " + diceB + " for a total of " + diceSum);
 			MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex() + diceSum);
 			MonopolyPlay.locationPics();
-			GoTriggerEvent();
 
-			if (MonopolyBank.playName.get(0).getIndex() >= 39) {
-
-				MonopolyCardsandDice.GoTriggerEvent();
-
+			if (MonopolyBank.playName.get(0).getIndex() > 39) {
+				GoTriggerEvent();
+				playing = false;
 			}
+			if (MonopolyBank.playName.get(0).getIndex() == 20) {
+				landOnFreeParking();
+			}
+
 		}
 	}
 
 	public static void CheckMoneyLevel() {
-		if (players.money == 5000.0) {
+		if (players.money == 2500.0) {
 			System.out.println("YAY! " + MonopolyBank.playName + ". You just won Disney Monopoly!!");
 			playing = false;
 		}
@@ -69,16 +69,20 @@ public class MonopolyCardsandDice {
 	}
 
 	public static void GoTriggerEvent() {
+
 		// players.index = players.index - 39;
 		System.out.println("You have passed GO! So you get $200 added to your bank account.");
+
 		players.money += 200.0;
-		MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex() - 39);
 		CheckMoneyLevel();
+		MonopolyBank.playName.get(0).setIndex(0);
 
 	}
 
 	public static void landOnFreeParking() {
 		System.out.println("You landed on Free Parking! Now you are going to be moving backwards");
+		MonopolyBank.playName.get(0)
+				.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum * -1);
 
 		// if (players.index == 20)
 		// {
@@ -87,11 +91,13 @@ public class MonopolyCardsandDice {
 
 		// }
 
-		for (players.index = 0; players.index < MonopolyRunner.board.length; players.index++) {
-
-			MonopolyBank.playName.get(0)
-					.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum * -1);
-		}
+		/*
+		 * for (players.index = 0; players.index < MonopolyRunner.board.length;
+		 * players.index++) {
+		 * 
+		 * 
+		 * }
+		 */
 
 		// if(movingForward == false)
 		// {

@@ -1,12 +1,8 @@
 import java.util.ArrayList;
-
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import javax.swing.JOptionPane;
 
 public class MonopolyBank {
@@ -229,8 +225,10 @@ public class MonopolyBank {
 			if (dungeonChoice == 1) {
 				System.out.println(playerName + ", you are now out $200. The bank now is $200 richer.");
 				playName.get(0).setMoney(playName.get(0).getMoney() - 200.0);
+				MonopolyCardsandDice.CheckMoneyLevel();
 
-			} else if (dungeonChoice == 2) {
+			}
+			if (dungeonChoice == 2) {
 				System.out.println(
 						"You have lost three turns " + playerName + " You are now back where you started on tile 1");
 			}

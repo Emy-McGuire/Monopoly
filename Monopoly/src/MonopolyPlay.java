@@ -1,8 +1,7 @@
-import java.util.Scanner;
 
+import java.util.Scanner;
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -93,6 +92,7 @@ public class MonopolyPlay {
 			break;
 		}
 		case 12: {
+			System.out.println("You have landed on the ELECTRIC COMPANY UTILITY");
 			MonopolyBank.landOnUtility();
 			break;
 		}
@@ -197,6 +197,7 @@ public class MonopolyPlay {
 			break;
 		}
 		case 28: {
+			System.out.println("You have landed on the WATER WORKS UTILITY");
 			MonopolyBank.landOnUtility();
 			break;
 		}
@@ -246,6 +247,7 @@ public class MonopolyPlay {
 			break;
 		}
 		case 35: {
+			System.out.println("You have landed on the SHORT LINE UTILITY");
 			MonopolyBank.landOnUtility();
 
 			break;
@@ -258,8 +260,8 @@ public class MonopolyPlay {
 		}
 		case 37: {
 			ImageIcon cottage = new ImageIcon(("thebes.jpg"));
-			JOptionPane.showMessageDialog(frame, "You have landed on THEBES", null, JOptionPane.QUESTION_MESSAGE,
-					cottage);
+			JOptionPane.showMessageDialog(frame, "You have landed on the CITY OF THEBES", null,
+					JOptionPane.QUESTION_MESSAGE, cottage);
 			MonopolyBank.landOnProperty();
 			break;
 		}
@@ -271,7 +273,7 @@ public class MonopolyPlay {
 		}
 		case 39: {
 			ImageIcon cottage = new ImageIcon(("olympus.jpg"));
-			JOptionPane.showMessageDialog(frame, "You have landed on OLYMPUS", null, JOptionPane.QUESTION_MESSAGE,
+			JOptionPane.showMessageDialog(frame, "You have landed on MT. OLYMPUS", null, JOptionPane.QUESTION_MESSAGE,
 					cottage);
 			MonopolyBank.landOnProperty();
 			break;
