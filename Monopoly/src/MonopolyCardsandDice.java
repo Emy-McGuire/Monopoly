@@ -38,16 +38,11 @@ public class MonopolyCardsandDice {
 			roll = userInput.nextLine();
 			// System.out.println("Your index is 20");
 			System.out.println("You rolled: " + diceA + " and " + diceB + " for a total of " + diceSum);
-			MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex() + diceSum);
-			MonopolyPlay.locationPics();
 
-			if (MonopolyBank.playName.get(0).getIndex() > 39) {
-				GoTriggerEvent();
-				playing = false;
-			}
-			if (MonopolyBank.playName.get(0).getIndex() == 20) {
-				landOnFreeParking();
-			}
+			// MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex()
+			// + diceSum);
+			MonopolyBank.playName.get(0).setIndex(20);
+			MonopolyPlay.locationPics();
 
 		}
 	}
@@ -71,18 +66,27 @@ public class MonopolyCardsandDice {
 	public static void GoTriggerEvent() {
 
 		// players.index = players.index - 39;
-		System.out.println("You have passed GO! So you get $200 added to your bank account.");
+		if (players.index > 39) {
+			MonopolyBank.playName.get(0).setIndex(0);
 
-		players.money += 200.0;
-		CheckMoneyLevel();
-		MonopolyBank.playName.get(0).setIndex(0);
+			System.out.println("You have passed GO! So you get $200 added to your bank account.");
+
+			players.money += 200.0;
+			CheckMoneyLevel();
+		}
 
 	}
 
 	public static void landOnFreeParking() {
-		System.out.println("You landed on Free Parking! Now you are going to be moving backwards");
-		MonopolyBank.playName.get(0)
-				.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum * -1);
+		switch (players.index) {
+		case 20: {
+			System.out.println("You landed on Free Parking! Now you are going to be moving backwards");
+
+			MonopolyBank.playName.get(0)
+					.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum * -1);
+		}
+		}
+		rollDice();
 
 		// if (players.index == 20)
 		// {
