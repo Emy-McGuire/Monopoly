@@ -9,6 +9,10 @@ public class MonopolyCardsandDice {
 	static int randomNumber1;
 	static int randomNumber2;
 
+	static int negativeRandom1;
+	static int negativeRandom2;
+	static int negativeSum;
+
 	static int diceA;
 	static int diceB;
 
@@ -33,30 +37,33 @@ public class MonopolyCardsandDice {
 		while (playing) {
 
 			// 1
+			//
+
 			// diceSum = 20;
 			System.out.println("Click enter to roll");
 			roll = userInput.nextLine();
 			// System.out.println("Your index is 20");
 			System.out.println("You rolled: " + diceA + " and " + diceB + " for a total of " + diceSum);
-
-			// MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex()
-			// + diceSum);
-			MonopolyBank.playName.get(0).setIndex(20);
+			
+			MonopolyBank.playName.get(0).setIndex(MonopolyBank.playName.get(0).getIndex() + diceSum);
+			// MonopolyBank.playName.get(0).setIndex(20);
 			MonopolyPlay.locationPics();
+			if (MonopolyBank.playName.get(0).getIndex() > 39) {
+				GoTriggerEvent();
+				playing = false;
 
+			}
 		}
 	}
 
 	public static void CheckMoneyLevel() {
 		if (players.money == 2500.0) {
 			System.out.println("YAY! " + MonopolyBank.playName + ". You just won Disney Monopoly!!");
-			playing = false;
 		}
 
 		else if (players.money == 0.0) {
 			System.out.println(
 					"Ooops looks like you are out of money meaning you are..." + "\n " + "\n BANKRUPT!!" + "\n ");
-			playing = false;
 		} else {
 			System.out.println(MonopolyBank.playerName + "'s bank account is currently at: " + players.money);
 			rollDice();
@@ -66,27 +73,31 @@ public class MonopolyCardsandDice {
 	public static void GoTriggerEvent() {
 
 		// players.index = players.index - 39;
-		if (players.index > 39) {
-			MonopolyBank.playName.get(0).setIndex(0);
 
-			System.out.println("You have passed GO! So you get $200 added to your bank account.");
+		// MonopolyBank.playName.get(0).setIndex(0);
 
-			players.money += 200.0;
-			CheckMoneyLevel();
-		}
+		System.out.println("You have passed GO! So you get $200 added to your bank account.");
+
+		players.money += 200.0;
+		CheckMoneyLevel();
+		rollDice();
 
 	}
 
 	public static void landOnFreeParking() {
 		switch (players.index) {
 		case 20: {
-			System.out.println("You landed on Free Parking! Now you are going to be moving backwards");
 
-			MonopolyBank.playName.get(0)
-					.setIndex(MonopolyBank.playName.get(0).getIndex() + MonopolyCardsandDice.diceSum * -1);
+			/*
+			 * negativeRandom1 = (int) (Math.random() * -6 - 1); negativeRandom2 = (int)
+			 * (Math.random() * -6 - 1); negativeSum = negativeRandom1 + negativeRandom2;
+			 */
+			MonopolyBank.playName.get(0).setIndex(diceSum * -1);
+			System.out.println("You landed on Free Parking! Now you are going to be moving backwards");
+			break;
+
 		}
 		}
-		rollDice();
 
 		// if (players.index == 20)
 		// {
