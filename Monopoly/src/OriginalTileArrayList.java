@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class OriginalTileArrayList {
-static ArrayList <OriginalTile> originalNames = new ArrayList<OriginalTile>();
+	static ArrayList<OriginalTile> originalNames = new ArrayList<OriginalTile>();
+
 	public static void main(String[] args) {
 
 		originalNames.add(new OriginalTile("GO"));
@@ -45,7 +46,6 @@ static ArrayList <OriginalTile> originalNames = new ArrayList<OriginalTile>();
 		originalNames.add(new OriginalTile("LUXURY TAX"));
 		originalNames.add(new OriginalTile("BOARD WALK"));
 
-		
 	}
 
 }
