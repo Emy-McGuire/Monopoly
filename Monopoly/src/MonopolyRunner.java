@@ -11,7 +11,8 @@ public class MonopolyRunner
 				GameMenu.gameIntro();
 				MonopolyBank.bankMath();
 				MonopolyBank.choosePlayer();
-				changeBoard.changeGameBoard();
+				//changeBoard.changeGameBoard();
+				DisneyArrayList.Boards();
 				MonopolyCardsandDice.rollDice();
 				MonopolyPlay.locationPics();
 				
